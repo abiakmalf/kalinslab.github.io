@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Service - KALINSLAB</title>
+  <link rel="icon" type="image/png" href="img/lg3.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    /* Hover smooth untuk kartu */
+    .hover-card:hover {
+      transform: translateY(-6px) scale(1.03);
+      box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+      transition: all 0.3s ease-in-out;
+    }
+
+    /* Overlay teks slider */
+    .slider-text {
+      background: rgba(0,0,0,0.35);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+    }
+    #page-content {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  #page-content.slide-in {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  #page-content.slide-out {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 font-sans min-h-screen flex flex-col">
+
+<!-- Navbar -->
+<nav class="bg-white shadow-md sticky top-0 z-50 py-3 px-4">
+  <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center space-x-2 no-underline">
+      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <span class="text-lg font-bold text-black">KALINSLAB</span>
+    </a>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:flex items-center space-x-6 font-medium">
+      <a href="index.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Home</a>
+      <a href="tentang.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">About</a>
+      <a href="service.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Service</a>
+      <a href="kontak.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Contact</a>
+    </div>
+
+    <!-- Mobile Button -->
+    <div class="md:hidden">
+      <button id="menu-btn" class="focus:outline-none text-gray-700">
+        <!-- Hamburger Icon -->
+        <svg id="menu-open" xmlns="http://www.w3.org/2000/svg" 
+             class="h-7 w-7" fill="none" viewBox="0 0 24 24" 
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+        <!-- Close Icon -->
+        <svg id="menu-close" xmlns="http://www.w3.org/2000/svg" 
+             class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" 
+             stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" 
+                d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" 
+       class="max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out flex-col bg-gray-50 shadow-md md:hidden">
+    <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-home mr-2"></i> Beranda
+    </a>
+    <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-users mr-2"></i> Tentang Kami
+    </a>
+    <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-tools mr-2"></i> Service
+    </a>
+    <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-envelope mr-2"></i> Kontak
+    </a>
+  </div>
+</nav>
+
+<!-- Script -->
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const openIcon = document.getElementById('menu-open');
+  const closeIcon = document.getElementById('menu-close');
+
+  btn.addEventListener('click', () => {
+    const isOpen = menu.classList.contains("max-h-0");
+
+    if (isOpen) {
+      // buka menu
+      menu.classList.remove("max-h-0", "opacity-0", "scale-y-95");
+      menu.classList.add("max-h-screen", "opacity-100", "scale-y-100");
+    } else {
+      // tutup menu
+      menu.classList.add("max-h-0", "opacity-0", "scale-y-95");
+      menu.classList.remove("max-h-screen", "opacity-100", "scale-y-100");
+    }
+
+    openIcon.classList.toggle("hidden");
+    closeIcon.classList.toggle("hidden");
+  });
+</script>
+<main id="page-content">
+  <!-- Hero Section Teks -->
+  <section class="relative bg-blue-50 py-20">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
+        Jasa Service Alat Laboratorium
+      </h1>
+      <p class="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
+        Perbaiki alat laboratorium kesayangan Anda di sini dengan biaya terjangkau untuk semua merek dan kategori alat.
+      </p>
+    </div>
+  </section>
+
+<!-- Filter Kategori -->
+<section class="py-12">
+  <div class="container mx-auto px-6 flex justify-center flex-wrap gap-4">
+    <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-lg" data-filter="all">Semua</button>
+    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300" data-filter="kalibrasi">Kalibrasi</button>
+    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300" data-filter="maintenance">Maintenance</button>
+  </div>
+</section>
+
+<!-- Grid Portofolio -->
+<section class="pb-24">
+  <div class="container mx-auto px-6">
+    <div id="portfolio-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Item Portofolio Kalibrasi -->
+      <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
+        <img src="img/service/service1.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Kalibrasi Microplate Reader EZ Read 400</h3>
+          <p class="text-gray-600 text-sm">Melakukan kalibrasi panjang gelombang serta akurasi pembacaan absorbansi pada Microplate Reader.</p>
+        </div>
+      </div>
+
+      <!-- Item Portofolio Maintenance -->
+      <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
+        <img src="img/service/service2.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Maintenance Thermoshake dan Shaker Incubator</h3>
+          <p class="text-gray-600 text-sm">Melakukan perawatan pada alat Thermoshake dan Shaker Incubator untuk memastikan kinerja optimal.</p>
+        </div>
+      </div>
+
+      <!-- Item Portofolio Kalibrasi -->
+      <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
+        <img src="img/service/service3.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Kalibrasi Hotplate Stirrer Thermo Scientific</h3>
+          <p class="text-gray-600 text-sm">Melakukan kalibrasi suhu pada Hotplate Stirrer menggunakan Digital Thermometer (Thermocouple Type K) sebagai acuan.</p>
+        </div>
+      </div>
+
+      <!-- Item Portofolio Maintenance -->
+      <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
+        <img src="img/service/service4.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Maintenance Panel Elektronik Alat Laboratorium</h3>
+          <p class="text-gray-600 text-sm">Melakukan perawatan dan perbaikan pada sistem elektronik alat laboratorium.</p>
+        </div>
+      </div>
+            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
+        <img src="img/service/service5.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Maintenance Centrifuge Refrigerated Biorin</h3>
+          <p class="text-gray-600 text-sm">Melakukan perawatan kinerja pada centrifuge dengan pendingin.</p>
+        </div>
+      </div>
+           <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
+        <img src="img/service/service6.jpg" class="w-full h-60 object-cover">
+        <div class="p-4 bg-white">
+          <h3 class="text-xl font-semibold">Kalibrasi Real-Time PCR Sacace</h3>
+          <p class="text-gray-600 text-sm">Melakukan kalibrasi Real-Time PCR untuk memastikan akurasi suhu dan sensitivitas deteksi.</p>
+        </div>
+      </div>
+
+      <!-- Tambahkan item lainnya dengan data-category sesuai -->
+    </div>
+
+    <!-- Pagination -->
+    <div class="mt-12 flex justify-center">
+      <nav class="inline-flex space-x-2">
+        <button id="prev-page" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">&lt; Sebelumnya</button>
+        <button id="page1" class="page-btn px-4 py-2 bg-blue-600 text-white rounded" data-page="1">1</button>
+        <button id="page2" class="page-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-page="2">2</button>
+        <button id="next-page" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Berikutnya &gt;</button>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<script>
+  const itemsPerPage = 3;
+  let currentPage = 1;
+  let currentFilter = "all";
+
+  const items = document.querySelectorAll(".portfolio-item");
+  const filterBtns = document.querySelectorAll(".filter-btn");
+
+  function showItems() {
+    let visibleItems = Array.from(items).filter(item => {
+      return currentFilter === "all" || item.dataset.category === currentFilter;
+    });
+
+    items.forEach(item => item.style.display = "none");
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    visibleItems.slice(start, end).forEach(item => item.style.display = "block");
+  }
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterBtns.forEach(b => b.classList.remove("bg-blue-600","text-white"));
+      btn.classList.add("bg-blue-600","text-white");
+      currentFilter = btn.dataset.filter;
+      currentPage = 1;
+      showItems();
+    });
+  });
+
+  document.querySelectorAll(".page-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentPage = parseInt(btn.dataset.page);
+      document.querySelectorAll(".page-btn").forEach(b => b.classList.remove("bg-blue-600","text-white"));
+      btn.classList.add("bg-blue-600","text-white");
+      showItems();
+    });
+  });
+
+  document.getElementById("prev-page").addEventListener("click", () => {
+    if (currentPage > 1) {
+      currentPage--;
+      showItems();
+    }
+  });
+
+  document.getElementById("next-page").addEventListener("click", () => {
+    currentPage++;
+    showItems();
+  });
+
+  // Tampilkan awal
+  showItems();
+</script>
+</main>
+
+<!-- Footer -->
+<footer style="background-color:#1f2937; color:#fff; padding:50px 20px;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; max-width:1200px; margin:0 auto; gap:30px;">
+    
+    <!-- Contact -->
+    <div style="flex:1; min-width:220px;">
+      <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">CONTACT</h5>
+      <p style="margin:8px 0;">Address: Pesona Kahirupan 3,<br>Blok C7/C8, Bogor</p>
+      <p style="margin:8px 0;">Email: kalinslab@gmail.com</p>
+      <p style="margin:8px 0;">Phone: 0857-7781-7631</p>
+    </div>
+
+    <!-- About -->
+    <div style="flex:1; min-width:220px;">
+      <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">ABOUT KALINSLAB</h5>
+      <p style="margin:8px 0; line-height:1.6;">
+        Kami adalah penyedia jasa servis untuk peralatan laboratorium penelitian, 
+        yang berkomitmen untuk memenuhi kebutuhan uji fungsi, perawatan, verifikasi, kalibrasi, dan perbaikan alat.
+      </p>
+    </div>
+
+    <!-- Links -->
+    <div style="flex:1; min-width:220px;">
+      <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">LINKS</h5>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin:8px 0;"><a href="index.html" style="color:#fff; text-decoration:none;">Home</a></li>
+        <li style="margin:8px 0;"><a href="tentang.html" style="color:#fff; text-decoration:none;">About</a></li>
+        <li style="margin:8px 0;"><a href="service.html" style="color:#fff; text-decoration:none;">Service</a></li>
+        <li style="margin:8px 0;"><a href="kontak.html" style="color:#fff; text-decoration:none;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Statement -->
+    <div style="flex:1; min-width:220px;">
+      <img src="img/sertifikat.jpeg" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
+    </div>
+  </div>
+
+  <hr style="border:0; border-top:1px solid #444; margin:30px 0;">
+
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; max-width:1200px; margin:0 auto; text-align:center; gap:20px;">
+    <p style="margin:0;">Copyright © CV. KALINSLAB</p>
+    <div style="display:flex; gap:20px; justify-content:center; font-size:20px;">
+      <a href="https://www.facebook.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-instagram"></i></a>
+     <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+      <a href="https://www.linkedin.com/in/paris-wanda-maulana-63521816b/recent-activity/all/" style="color:#fff; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</footer>
+<script>
+  const content = document.getElementById("page-content");
+
+  // Saat halaman dimuat -> animasi masuk
+  window.addEventListener("load", () => {
+    content.classList.add("slide-in");
+  });
+
+  // Animasi keluar sebelum pindah halaman
+  document.querySelectorAll("a[href]").forEach(link => {
+    if (link.hostname === window.location.hostname) {
+      link.addEventListener("click", function(e) {
+        // Biar animasi jalan, tahan dulu perpindahan
+        e.preventDefault();
+        const target = this.href;
+
+        content.classList.remove("slide-in");
+        content.classList.add("slide-out");
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 600); // sesuai durasi transition
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
