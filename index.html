@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Service - KALINSLAB</title>
-  <link rel="icon" type="image/png" href="img/lg3.png">
+  <title>Home - KALINSLAB</title>
+  <link rel="icon" type="image/png" href="img/lg3.webp">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -19,20 +19,21 @@
       border-radius: 0.5rem;
     }
      #page-content {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+      opacity: 0;
+      transform: translateY(30px); /* turun sedikit */
+      transition: opacity 0.5s ease, transform 0.5s ease;
+      will-change: opacity, transform;
+    }
 
-  #page-content.slide-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    #page-content.slide-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  #page-content.slide-out {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
+    #page-content.slide-out {
+      opacity: 0;
+      transform: translateY(-30px); /* keluar ke atas */
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 font-sans min-h-screen flex flex-col">
@@ -42,7 +43,7 @@
   <div class="container mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="index.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
 
@@ -79,16 +80,16 @@
   <div id="mobile-menu" 
        class="max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out flex-col bg-gray-50 shadow-md md:hidden">
     <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-home mr-2"></i> Beranda
+      <i class="fas fa-home mr-2"></i> Home
     </a>
     <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-users mr-2"></i> Tentang Kami
+      <i class="fas fa-users mr-2"></i> About
     </a>
     <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
       <i class="fas fa-tools mr-2"></i> Service
     </a>
     <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-envelope mr-2"></i> Kontak
+      <i class="fas fa-envelope mr-2"></i> Contact
     </a>
   </div>
 </nav>
@@ -122,26 +123,26 @@
 <section class="w-full relative overflow-hidden rounded-2xl shadow-lg mt-2">
   <div class="relative h-96 md:h-[450px]">
     <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-100">
-      <img src="img/slide1.jpg" class="w-full h-full object-cover" alt="Slide 1">
+      <img src="img/slide1.webp" class="w-full h-full object-cover" alt="Slide 1">
       <div class="absolute inset-0 flex items-center justify-center z-10">
         <h1 class="text-white text-3xl md:text-5xl font-bold text-center slider-text">
-          Solusi Kalibrasi & Laboratorium Modern
+          Modern Calibration & Laboratory Solutions
         </h1>
       </div>
     </div>
     <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-      <img src="img/slide2.jpg" class="w-full h-full object-cover" alt="Slide 2">
+      <img src="img/slide2.webp" class="w-full h-full object-cover" alt="Slide 2">
       <div class="absolute inset-0 flex items-center justify-center z-10">
         <h1 class="text-white text-3xl md:text-5xl font-bold text-center slider-text">
-          Tim Profesional & Terpercaya
+          Professional & Trusted Team
         </h1>
       </div>
     </div>
     <div class="slide absolute inset-0 transition-opacity duration-1000 opacity-0">
-      <img src="img/bg.png" class="w-full h-full object-cover" alt="Slide 3">
+      <img src="img/bg.webp" class="w-full h-full object-cover" alt="Slide 3">
       <div class="absolute inset-0 flex items-center justify-center z-10">
         <h1 class="text-white text-3xl md:text-5xl font-bold text-center slider-text">
-          Layanan Cepat & Efisien
+          Fast & Efficient Service
         </h1>
       </div>
     </div>
@@ -169,22 +170,22 @@
 <!-- Features -->
 <section class="bg-gray-50 py-24">
   <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-gray-800 mb-16">Mengapa Memilih Kami?</h2>
+    <h2 class="text-4xl font-bold text-gray-800 mb-16">Why Choose Us?</h2>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
       <div class="bg-white p-10 rounded-3xl shadow-md hover-card">
         <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="w-24 mx-auto mb-6" alt="Profesional">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Profesional</h3>
-        <p class="text-gray-600 leading-relaxed">Tim ahli dengan pengalaman di bidang kalibrasi alat laboratorium.</p>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Professional</h3>
+        <p class="text-gray-600 leading-relaxed">A team of experts with experience in the field of laboratory equipment calibration.</p>
       </div>
       <div class="bg-white p-10 rounded-3xl shadow-md hover-card">
         <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" class="w-24 mx-auto mb-6" alt="Layanan Cepat">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Layanan Cepat</h3>
-        <p class="text-gray-600 leading-relaxed">Proses kalibrasi dan pelayanan yang efisien dan tepat waktu.</p>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Fast Service</h3>
+        <p class="text-gray-600 leading-relaxed">Efficient and timely calibration and service processes.</p>
       </div>
       <div class="bg-white p-10 rounded-3xl shadow-md hover-card">
         <img src="https://cdn-icons-png.flaticon.com/512/747/747310.png" class="w-24 mx-auto mb-6" alt="Terpercaya">
-        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Terpercaya</h3>
-        <p class="text-gray-600 leading-relaxed">Bekerja dengan standar mutu tinggi dan jaminan hasil akurat.</p>
+        <h3 class="text-2xl font-semibold text-blue-600 mb-4">Trusted</h3>
+        <p class="text-gray-600 leading-relaxed">Working with high quality standards and guaranteeing accurate results.</p>
       </div>
     </div>
   </div>
@@ -198,13 +199,13 @@
       <!-- Card 1 -->
       <div class="relative overflow-hidden rounded-xl shadow-lg group h-72 flex items-center">
         <!-- Background Image -->
-        <img src="img/see all.jpg" alt="See All Products" 
+        <img src="img/see all.webp" alt="See All Products" 
              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-blue-900/70"></div>
         <!-- Content -->
         <div class="relative z-10 p-8 text-white">
-          <h3 class="text-3xl font-bold mb-3">SEE ALL<br>PRODUCTS</h3>
+          <h3 class="text-3xl font-bold mb-3">SEE ALL<br>SERVICE</h3>
           <a href="tentang.html" class="inline-block font-medium hover:underline">
             Learn More &gt;&gt;
           </a>
@@ -214,7 +215,7 @@
       <!-- Card 2 -->
       <div class="relative overflow-hidden rounded-xl shadow-lg group h-72 flex items-center">
         <!-- Background Image -->
-        <img src="img/hubungi.jpg" alt="Contact Us" 
+        <img src="img/hubungi.webp" alt="Contact Us" 
              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
         <!-- Overlay -->
         <div class="absolute inset-0 bg-gray-900/50"></div>
@@ -235,41 +236,51 @@
 <!-- Carousel Produk -->
 <section class="py-24 bg-white">
   <div class="container mx-auto px-6 text-center">
-    <h2 class="text-4xl font-bold text-gray-800 mb-12">Produk & Layanan Kami</h2>
-    <div class="relative overflow-hidden">
-      <div id="produkWrapper" class="flex transition-transform duration-500 space-x-6">
+    <h2 class="text-4xl font-bold text-gray-800 mb-12">Our Products & Services</h2>
+    <div class="relative">
+      
+      <!-- Wrapper bisa discroll -->
+      <div id="produkWrapper" 
+           class="flex space-x-6 overflow-x-auto scrollbar-hide scroll-smooth snap-x snap-mandatory">
+        
         <!-- Produk contoh -->
-        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform">
-          <img src="img/alat/produk1.jpg" class="rounded-xl object-cover w-full h-52" alt="Produk 1">
+        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform snap-start">
+          <img src="img/alat/produk1.webp" class="rounded-xl object-cover w-full h-52" alt="Produk 1">
           <h3 class="mt-2 text-lg font-semibold text-gray-800">Biobase Analytical Balance BA1204C</h3>
-          <p class="text-gray-600 text-sm mb-2">Analytical Balance (timbangan analitik).</p>
-          <a href="Biobase-Analytical-Balance-BA1204C.html" class="text-blue-600 font-semibold hover:underline text-sm">Selengkapnya &gt;&gt;</a>
+          <p class="text-gray-600 text-sm mb-2">Analytical Balance</p>
+          <a href="Biobase-Analytical-Balance-BA1204C.html" class="text-blue-600 font-semibold hover:underline text-sm">More &gt;&gt;</a>
         </div>
-        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform">
-          <img src="img/alat/produk2.jpg" class="rounded-xl object-cover w-full h-52" alt="Produk 2">
+
+        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform snap-start">
+          <img src="img/alat/produk2.webp" class="rounded-xl object-cover w-full h-52" alt="Produk 2">
           <h3 class="mt-2 text-lg font-semibold text-gray-800">B2 bio safety cabinet</h3>
           <p class="text-gray-600 text-sm mb-2">Biosafety Cabinet (BSC).</p>
-          <a href="B2-bio-safety-cabinet.html" class="text-blue-600 font-semibold hover:underline text-sm">Selengkapnya &gt;&gt;</a>
+          <a href="B2-bio-safety-cabinet.html" class="text-blue-600 font-semibold hover:underline text-sm">More &gt;&gt;</a>
         </div>
-        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform">
-          <img src="img/alat/produk3.png" class="rounded-xl object-cover w-full h-52" alt="Produk 3">
+
+        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform snap-start">
+          <img src="img/alat/produk3.webp" class="rounded-xl object-cover w-full h-52" alt="Produk 3">
           <h3 class="mt-2 text-lg font-semibold text-gray-800">Microscope Binocular XS-208A</h3>
-          <p class="text-gray-600 text-sm mb-2">mikroskop cahaya (optik).</p>
-          <a href="Microscope-Binocular-XS-208A.html" class="text-blue-600 font-semibold hover:underline text-sm">Selengkapnya &gt;&gt;</a>
+          <p class="text-gray-600 text-sm mb-2">light (optical) microscope.</p>
+          <a href="Microscope-Binocular-XS-208A.html" class="text-blue-600 font-semibold hover:underline text-sm">More &gt;&gt;</a>
         </div>
-            <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform">
-          <img src="img/alat/produk4.jpg" class="rounded-xl object-cover w-full h-52" alt="Produk 2">
+
+        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform snap-start">
+          <img src="img/alat/produk4.webp" class="rounded-xl object-cover w-full h-52" alt="Produk 4">
           <h3 class="mt-2 text-lg font-semibold text-gray-800">Shaker Orbital SK-0330-PRO</h3>
-          <p class="text-gray-600 text-sm mb-2">gerakan orbital (melingkar).</p>
-          <a href="Shaker-Orbital-SK-0330-PRO.html" class="text-blue-600 font-semibold hover:underline text-sm">Selengkapnya &gt;&gt;</a>
+          <p class="text-gray-600 text-sm mb-2">orbital (circular) motion.</p>
+          <a href="Shaker-Orbital-SK-0330-PRO.html" class="text-blue-600 font-semibold hover:underline text-sm">More &gt;&gt;</a>
         </div>
-          <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform">
-          <img src="img/alat/produk5.jpg" class="rounded-xl object-cover w-full h-52" alt="Produk 2">
+
+        <div class="relative w-56 flex-shrink-0 bg-white p-4 rounded-3xl shadow-md hover:shadow-xl hover:scale-105 transition-transform snap-start">
+          <img src="img/alat/produk5.webp" class="rounded-xl object-cover w-full h-52" alt="Produk 5">
           <h3 class="mt-2 text-lg font-semibold text-gray-800">THERMO SCIENTIFIC CIMAREC Hotplate Stirrer</h3>
-          <p class="text-gray-600 text-sm mb-2">memanaskan & mengaduk larutan.</p>
-          <a href="THERMO-SCIENTIFIC-CIMAREC-Hotplate-Stirrer.html" class="text-blue-600 font-semibold hover:underline text-sm">Selengkapnya &gt;&gt;</a>
+          <p class="text-gray-600 text-sm mb-2">heating & stirring the solution.</p>
+          <a href="THERMO-SCIENTIFIC-CIMAREC-Hotplate-Stirrer.html" class="text-blue-600 font-semibold hover:underline text-sm">More &gt;&gt;</a>
         </div>
       </div>
+
+      <!-- Tombol Navigasi -->
       <button id="prevProduk" class="absolute left-0 top-1/2 -translate-y-1/2 bg-gray-400 text-white p-3 rounded-full shadow-lg hover:bg-gray-500 z-20">&#10094;</button>
       <button id="nextProduk" class="absolute right-0 top-1/2 -translate-y-1/2 bg-gray-400 text-white p-3 rounded-full shadow-lg hover:bg-gray-500 z-20">&#10095;</button>
     </div>
@@ -277,25 +288,28 @@
 </section>
 
 <script>
-  // Carousel Produk
+  // Geser pakai tombol
   const wrapper = document.getElementById('produkWrapper');
-  const cardWidth = wrapper.children[0].offsetWidth + 24; // width + gap
-  let offset = 0;
+  const cardWidth = wrapper.children[0].offsetWidth + 24; // lebar card + gap
 
   function updateProduk(direction){
-    const maxOffset = wrapper.scrollWidth - wrapper.clientWidth;
     if(direction==='next'){
-      offset = Math.min(offset + cardWidth, maxOffset);
+      wrapper.scrollBy({left: cardWidth, behavior: 'smooth'});
     } else {
-      offset = Math.max(offset - cardWidth, 0);
+      wrapper.scrollBy({left: -cardWidth, behavior: 'smooth'});
     }
-    wrapper.style.transform = `translateX(-${offset}px)`;
   }
 
   document.getElementById('nextProduk').addEventListener('click', ()=>updateProduk('next'));
   document.getElementById('prevProduk').addEventListener('click', ()=>updateProduk('prev'));
-
 </script>
+
+<!-- Tambahkan CSS ini biar scrollbar hilang di HP -->
+<style>
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
 </main>
 <!-- Footer -->
 <footer style="background-color:#1f2937; color:#fff; padding:50px 20px;">
@@ -313,8 +327,8 @@
     <div style="flex:1; min-width:220px;">
       <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">ABOUT KALINSLAB</h5>
       <p style="margin:8px 0; line-height:1.6;">
-        Kami adalah penyedia jasa servis untuk peralatan laboratorium penelitian, 
-        yang berkomitmen untuk memenuhi kebutuhan uji fungsi, perawatan, verifikasi, kalibrasi, dan perbaikan alat.
+        We are a service provider for research laboratory equipment,
+        committed to meeting your needs for functional testing, maintenance, verification, calibration, and repair.
       </p>
     </div>
 
@@ -331,7 +345,7 @@
 
     <!-- Statement -->
     <div style="flex:1; min-width:220px;">
-      <img src="img/sertifikat.jpeg" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
+      <img src="img/sertifikat.webp" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
     </div>
   </div>
 
@@ -342,10 +356,7 @@
     <div style="display:flex; gap:20px; justify-content:center; font-size:20px;">
       <a href="https://www.facebook.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-instagram"></i></a>
-     <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
+      <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.linkedin.com/in/paris-wanda-maulana-63521816b/recent-activity/all/" style="color:#fff; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>

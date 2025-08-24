@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>B2 bio safety cabinet — KALINSLAB</title>
+  <title>B2 Bio Safety Cabinet — KALINSLAB</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* Transisi gambar utama */
@@ -18,35 +19,42 @@
     /* Transisi konten halaman */
     #page-content {
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateY(30px);
       transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: opacity, transform;
     }
 
     #page-content.slide-in {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
 
     #page-content.slide-out {
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateY(-30px);
     }
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 font-sans min-h-screen flex flex-col">
 
+<!-- Navbar -->
 <nav class="bg-white shadow-md sticky top-0 z-50 py-3 px-4">
   <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
     <a href="beranda.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6 font-medium">
       <a href="index.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Home</a>
       <a href="tentang.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">About</a>
       <a href="service.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Service</a>
       <a href="kontak.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Contact</a>
     </div>
+
+    <!-- Mobile Button -->
     <div class="md:hidden">
       <button id="menu-btn" class="focus:outline-none text-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -56,32 +64,42 @@
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu dengan ICON -->
   <div id="mobile-menu" class="hidden md:hidden bg-gray-100 shadow-md">
-    <a href="index.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
-    <a href="tentang.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">About</a>
-    <a href="service.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Service</a>
-    <a href="kontak.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+    <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-home mr-2"></i> Home
+    </a>
+    <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-users mr-2"></i> About
+    </a>
+    <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-tools mr-2"></i> Service
+    </a>
+    <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-envelope mr-2"></i> Contact
+    </a>
   </div>
 </nav>
 
-<!-- Konten Produk dengan animasi -->
-<div id="page-content" class="container mx-auto p-6 bg-white mt-10 rounded-2xl shadow-xl max-w-6xl">
+<!-- Konten Produk -->
+<main id="page-content" class="container mx-auto p-6 bg-white mt-10 rounded-2xl shadow-xl max-w-6xl">
   <div class="flex flex-col md:flex-row gap-10">
 
     <!-- Gambar Produk -->
     <div class="md:w-1/2 flex flex-col items-center">
-      <img id="mainImage" src="img/alat/produk2.jpg" alt="B2 Bio Safety Cabinet"
+      <img id="mainImage" src="img/alat/produk2.webp" alt="B2 Bio Safety Cabinet"
            class="w-full h-96 object-contain rounded-xl shadow-lg mb-5 bg-gray-50 p-4">
 
       <!-- Thumbnail Gallery -->
       <div class="flex gap-4">
-        <img src="img/alat/produk2.jpg" alt="thumb1"
+        <img src="img/alat/produk2.webp" alt="thumb1"
              class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-600 hover:scale-105 transition"
-             onmouseover="changeImage('img/alat/produk2.jpg', this)">
+             onmouseover="changeImage('img/alat/produk2.webp', this)">
         
-        <img src="img/alat/produk2-1.jpg" alt="thumb2"
+        <img src="img/alat/produk2-1.webp" alt="thumb2"
              class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
-             onmouseover="changeImage('img/alat/produk2-1.jpg', this)">
+             onmouseover="changeImage('img/alat/produk2-1.webp', this)">
       </div>
     </div>
 
@@ -89,13 +107,13 @@
     <div class="md:w-1/2 flex flex-col justify-center">
       <h1 class="text-4xl font-extrabold text-gray-900 mb-5">B2 Bio Safety Cabinet</h1>
       <p class="text-gray-700 text-lg leading-relaxed mb-6">
-        Biosafety Cabinet (BSC) Kelas II Tipe B2 adalah lemari khusus laboratorium dengan aliran udara terkontrol & sistem filtrasi HEPA yang memberikan perlindungan menyeluruh terhadap operator, sampel, dan lingkungan.
+        Biosafety Cabinet (BSC) Kelas II Tipe B2 adalah lemari laboratorium dengan aliran udara terkontrol & filtrasi HEPA, memberikan perlindungan menyeluruh terhadap operator, sampel, dan lingkungan.
       </p>
       <ul class="list-disc ml-5 text-gray-700 text-lg mb-6 space-y-2">
-        <li><strong>100% Exhaust:</strong> Semua udara disaring melalui HEPA filter lalu dibuang keluar gedung melalui ducting (tanpa resirkulasi).</li>
-        <li><strong>Keamanan Tinggi:</strong> Aman untuk bekerja dengan bahan kimia toksik, uap berbahaya, serta agen biologis infeksius.</li>
-        <li><strong>Filter:</strong> HEPA/ULPA filter dengan efisiensi ≥99,999% pada partikel ≥0,3 µm.</li>
-        <li><strong>Aplikasi:</strong> Cocok untuk laboratorium klinis, farmasi, mikrobiologi, dan penelitian BSL-2 hingga BSL-3.</li>
+        <li><strong>100% Exhaust:</strong> Semua udara difiltrasi & dibuang keluar ruangan (tanpa resirkulasi).</li>
+        <li><strong>Keamanan Tinggi:</strong> Aman untuk bahan kimia toksik, uap berbahaya, & agen biologis.</li>
+        <li><strong>Filter:</strong> HEPA/ULPA ≥99,999% efisiensi pada partikel ≥0,3 µm.</li>
+        <li><strong>Aplikasi:</strong> Cocok untuk laboratorium klinis, farmasi, mikrobiologi, dan BSL-2/BSL-3.</li>
       </ul>
 
       <div class="flex gap-4">
@@ -110,7 +128,7 @@
       </div>
     </div>
   </div>
-</div>
+</main>
 
 <!-- Script -->
 <script>
@@ -133,13 +151,13 @@
   const menu = document.getElementById('mobile-menu');
   btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-  // Animasi page-content saat load
+  // Animasi saat halaman load
   window.addEventListener("load", () => {
     document.getElementById("page-content").classList.add("slide-in");
   });
 
-  // Tambahkan animasi saat klik link
-  document.querySelectorAll("a.page-link").forEach(link => {
+  // Animasi hanya untuk link di dalam konten (class: page-link)
+  document.querySelectorAll("#page-content a.page-link").forEach(link => {
     link.addEventListener("click", function(e) {
       e.preventDefault();
       const target = this.href;
@@ -150,7 +168,7 @@
 
       setTimeout(() => {
         window.location.href = target;
-      }, 600); // sesuai durasi animasi
+      }, 600);
     });
   });
 </script>

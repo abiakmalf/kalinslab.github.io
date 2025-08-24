@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Biobase Analytical Balance BA1204C — KALINSLAB</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* Transisi gambar utama */
@@ -18,16 +19,19 @@
     /* Transisi konten halaman */
     #page-content {
       opacity: 0;
-      transform: translateX(100px);
+      transform: translateY(30px);
       transition: opacity 0.6s ease, transform 0.6s ease;
+      will-change: opacity, transform;
     }
+
     #page-content.slide-in {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
+
     #page-content.slide-out {
       opacity: 0;
-      transform: translateX(-100px);
+      transform: translateY(-30px);
     }
   </style>
 </head>
@@ -36,16 +40,21 @@
 <!-- Navbar -->
 <nav class="bg-white shadow-md sticky top-0 z-50 py-3 px-4">
   <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
     <a href="beranda.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6 font-medium">
       <a href="index.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Home</a>
       <a href="tentang.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">About</a>
       <a href="service.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Service</a>
       <a href="kontak.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Contact</a>
     </div>
+
+    <!-- Mobile Button -->
     <div class="md:hidden">
       <button id="menu-btn" class="focus:outline-none text-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -55,65 +64,65 @@
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu dengan ICON -->
   <div id="mobile-menu" class="hidden md:hidden bg-gray-100 shadow-md">
-    <a href="index.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
-    <a href="tentang.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">About</a>
-    <a href="service.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Service</a>
-    <a href="kontak.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+    <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-home mr-2"></i> Home
+    </a>
+    <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-users mr-2"></i> About
+    </a>
+    <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-tools mr-2"></i> Service
+    </a>
+    <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-envelope mr-2"></i> Contact
+    </a>
   </div>
 </nav>
 
 <!-- Konten Produk -->
-<main id="page-content">
-  <div class="container mx-auto p-6 bg-white mt-10 rounded-2xl shadow-xl max-w-6xl">
-    <div class="flex flex-col md:flex-row gap-10">
+<main id="page-content" class="container mx-auto p-6 bg-white mt-10 rounded-2xl shadow-xl max-w-6xl">
+  <div class="flex flex-col md:flex-row gap-10">
 
-      <!-- Gambar Produk -->
-      <div class="md:w-1/2 flex flex-col items-center">
-        <img id="mainImage" src="img/alat/produk1.jpg" alt="Biobase Analytical Balance BA1204C"
-             class="w-full h-96 object-contain rounded-xl shadow-lg mb-5 bg-gray-50 p-4">
+    <!-- Gambar Produk -->
+    <div class="md:w-1/2 flex flex-col items-center">
+      <img id="mainImage" src="img/alat/produk1.webp" alt="B2 Bio Safety Cabinet"
+           class="w-full h-96 object-contain rounded-xl shadow-lg mb-5 bg-gray-50 p-4">
 
-        <!-- Thumbnail Gallery -->
-        <div class="flex gap-4">
-          <img src="img/alat/produk1.jpg" alt="thumb1"
-               class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk1.jpg', this)">
-          
-          <img src="img/alat/produk1-1.jpg" alt="thumb2"
-               class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk1-1.jpg', this)">
-          
-          <img src="img/alat/produk1-2.jpg" alt="thumb3"
-               class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk1-2.jpg', this)">
-        </div>
+      <!-- Thumbnail Gallery -->
+      <div class="flex gap-4">
+        <img src="img/alat/produk1.webp" alt="thumb1"
+             class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-600 hover:scale-105 transition"
+             onmouseover="changeImage('img/alat/produk1.webp', this)">
+        
+        <img src="img/alat/produk1-1.webp" alt="thumb2"
+             class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
+             onmouseover="changeImage('img/alat/produk1-1.webp', this)">
       </div>
+    </div>
 
-      <!-- Detail Produk -->
-      <div class="md:w-1/2 flex flex-col justify-center">
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-5">Biobase Analytical Balance BA1204C</h1>
-        <p class="text-gray-700 text-lg leading-relaxed mb-6">
-          Timbangan analitik presisi tinggi dengan kapasitas <strong>120 g</strong>, resolusi <strong>0,1 mg (0.0001 g)</strong>.  
-          Cocok untuk laboratorium kimia, farmasi, dan penelitian.  
-          Dilengkapi layar LCD, pelindung draft shield, serta kalibrasi internal & eksternal.
-        </p>
-        <ul class="list-disc ml-5 text-gray-700 text-lg mb-6 space-y-2">
-          <li><strong>Kapasitas:</strong> 120 g</li>
-          <li><strong>Resolusi:</strong> 0,1 mg</li>
-          <li><strong>Display:</strong> LCD dengan draft shield</li>
-          <li><strong>Kalibrasi:</strong> Internal & eksternal</li>
-        </ul>
+    <!-- Detail Produk -->
+    <div class="md:w-1/2 flex flex-col justify-center">
+      <h1 class="text-4xl font-extrabold text-gray-900 mb-5">Biobase Analytical Balance BA1204C</h1>
+      <p class="text-gray-700 text-lg leading-relaxed mb-6">
+       Timbangan analitik presisi tinggi dengan kapasitas 120 g, resolusi 0,1 mg (0.0001 g). Cocok untuk laboratorium kimia, farmasi, dan penelitian. Dilengkapi layar LCD, pelindung draft shield, serta kalibrasi internal & eksternal.
+        <li><strong>Kapasitas:</strong> 120 g</li>
+        <li><strong>Resolusi:</strong> 0,1 mg</li>
+        <li><strong>Display:</strong> LCD dengan draft shield</li>
+        <li><strong>Kalibrasi:</strong> Internal & eksternal</li>
+      </ul>
 
-        <div class="flex gap-4">
-          <a href="kontak.html"
-             class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
-            Hubungi Kami
-          </a>
-          <a href="index.html"
-             class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow hover:bg-gray-300 transition">
-            ← Kembali
-          </a>
-        </div>
+      <div class="flex gap-4">
+        <a href="kontak.html"
+           class="page-link bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">
+          Hubungi Kami
+        </a>
+        <a href="index.html"
+           class="page-link bg-gray-200 text-gray-800 px-6 py-3 rounded-lg shadow hover:bg-gray-300 transition">
+          ← Kembali
+        </a>
       </div>
     </div>
   </div>
@@ -140,27 +149,25 @@
   const menu = document.getElementById('mobile-menu');
   btn.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-  // Page transition
-  const content = document.getElementById("page-content");
-
+  // Animasi saat halaman load
   window.addEventListener("load", () => {
-    content.classList.add("slide-in");
+    document.getElementById("page-content").classList.add("slide-in");
   });
 
-  document.querySelectorAll("a[href]").forEach(link => {
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener("click", function(e) {
-        e.preventDefault();
-        const target = this.href;
+  // Animasi hanya untuk link di dalam konten (class: page-link)
+  document.querySelectorAll("#page-content a.page-link").forEach(link => {
+    link.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = this.href;
+      const content = document.getElementById("page-content");
 
-        content.classList.remove("slide-in");
-        content.classList.add("slide-out");
+      content.classList.remove("slide-in");
+      content.classList.add("slide-out");
 
-        setTimeout(() => {
-          window.location.href = target;
-        }, 600);
-      });
-    }
+      setTimeout(() => {
+        window.location.href = target;
+      }, 600);
+    });
   });
 </script>
 </body>

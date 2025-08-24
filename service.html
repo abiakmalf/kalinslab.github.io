@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Service - KALINSLAB</title>
-  <link rel="icon" type="image/png" href="img/lg3.png">
+  <link rel="icon" type="image/png" href="img/lg3.webp">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Hover smooth untuk kartu */
     .hover-card:hover {
@@ -21,20 +22,21 @@
       border-radius: 0.5rem;
     }
     #page-content {
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+  opacity: 0;
+  transform: translateY(30px); /* turun sedikit */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  will-change: opacity, transform;
+}
 
-  #page-content.slide-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
+#page-content.slide-in {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  #page-content.slide-out {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
+#page-content.slide-out {
+  opacity: 0;
+  transform: translateY(-30px); /* keluar ke atas */
+}
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 font-sans min-h-screen flex flex-col">
@@ -44,7 +46,7 @@
   <div class="container mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="index.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
 
@@ -81,16 +83,16 @@
   <div id="mobile-menu" 
        class="max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out flex-col bg-gray-50 shadow-md md:hidden">
     <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-home mr-2"></i> Beranda
+      <i class="fas fa-home mr-2"></i> Home
     </a>
     <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-users mr-2"></i> Tentang Kami
+      <i class="fas fa-users mr-2"></i> About
     </a>
     <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
       <i class="fas fa-tools mr-2"></i> Service
     </a>
     <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-envelope mr-2"></i> Kontak
+      <i class="fas fa-envelope mr-2"></i> Contact
     </a>
   </div>
 </nav>
@@ -124,10 +126,10 @@
   <section class="relative bg-blue-50 py-20">
     <div class="container mx-auto px-6 text-center">
       <h1 class="text-3xl md:text-5xl font-bold text-gray-800 mb-6">
-        Jasa Service Alat Laboratorium
+        Laboratory Equipment Service
       </h1>
       <p class="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-        Perbaiki alat laboratorium kesayangan Anda di sini dengan biaya terjangkau untuk semua merek dan kategori alat.
+        Repair your favorite laboratory equipment here at affordable prices for all brands and categories of equipment.
       </p>
     </div>
   </section>
@@ -135,8 +137,8 @@
 <!-- Filter Kategori -->
 <section class="py-12">
   <div class="container mx-auto px-6 flex justify-center flex-wrap gap-4">
-    <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-lg" data-filter="all">Semua</button>
-    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300" data-filter="kalibrasi">Kalibrasi</button>
+    <button class="filter-btn px-4 py-2 bg-blue-600 text-white rounded-lg" data-filter="all">All</button>
+    <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300" data-filter="kalibrasi">Calibration</button>
     <button class="filter-btn px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300" data-filter="maintenance">Maintenance</button>
   </div>
 </section>
@@ -148,65 +150,55 @@
 
       <!-- Item Portofolio Kalibrasi -->
       <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
-        <img src="img/service/service1.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service1.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Kalibrasi Microplate Reader EZ Read 400</h3>
-          <p class="text-gray-600 text-sm">Melakukan kalibrasi panjang gelombang serta akurasi pembacaan absorbansi pada Microplate Reader.</p>
+          <h3 class="text-xl font-semibold">EZ Read 400 Microplate Reader Calibration</h3>
+          <p class="text-gray-600 text-sm">Perform wavelength calibration and absorbance reading accuracy on the Microplate Reader.</p>
         </div>
       </div>
 
       <!-- Item Portofolio Maintenance -->
       <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
-        <img src="img/service/service2.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service2.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Maintenance Thermoshake dan Shaker Incubator</h3>
-          <p class="text-gray-600 text-sm">Melakukan perawatan pada alat Thermoshake dan Shaker Incubator untuk memastikan kinerja optimal.</p>
+          <h3 class="text-xl font-semibold">Maintenance of Thermoshake and Shaker Incubator</h3>
+          <p class="text-gray-600 text-sm">Perform maintenance on Thermoshake and Shaker Incubator equipment to ensure optimal performance.</p>
         </div>
       </div>
 
       <!-- Item Portofolio Kalibrasi -->
       <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
-        <img src="img/service/service3.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service3.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Kalibrasi Hotplate Stirrer Thermo Scientific</h3>
-          <p class="text-gray-600 text-sm">Melakukan kalibrasi suhu pada Hotplate Stirrer menggunakan Digital Thermometer (Thermocouple Type K) sebagai acuan.</p>
+          <h3 class="text-xl font-semibold">Thermo Scientific Hotplate Stirrer Calibration</h3>
+          <p class="text-gray-600 text-sm">Calibrate the temperature on the Hotplate Stirrer using a Digital Thermometer (Thermocouple Type K) as a reference.</p>
         </div>
       </div>
 
       <!-- Item Portofolio Maintenance -->
       <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
-        <img src="img/service/service4.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service4.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Maintenance Panel Elektronik Alat Laboratorium</h3>
-          <p class="text-gray-600 text-sm">Melakukan perawatan dan perbaikan pada sistem elektronik alat laboratorium.</p>
+          <h3 class="text-xl font-semibold">Laboratory Equipment Electronic Panel Maintenance</h3>
+          <p class="text-gray-600 text-sm">Perform maintenance and repairs on electronic systems of laboratory equipment.</p>
         </div>
       </div>
             <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="maintenance">
-        <img src="img/service/service5.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service5.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Maintenance Centrifuge Refrigerated Biorin</h3>
-          <p class="text-gray-600 text-sm">Melakukan perawatan kinerja pada centrifuge dengan pendingin.</p>
+          <h3 class="text-xl font-semibold">Biorin Refrigerated Centrifuge Maintenance</h3>
+          <p class="text-gray-600 text-sm">Perform performance maintenance on a centrifuge with refrigeration.</p>
         </div>
       </div>
            <div class="portfolio-item group relative overflow-hidden rounded-lg" data-category="kalibrasi">
-        <img src="img/service/service6.jpg" class="w-full h-60 object-cover">
+        <img src="img/service/service6.webp" class="w-full h-60 object-cover">
         <div class="p-4 bg-white">
-          <h3 class="text-xl font-semibold">Kalibrasi Real-Time PCR Sacace</h3>
-          <p class="text-gray-600 text-sm">Melakukan kalibrasi Real-Time PCR untuk memastikan akurasi suhu dan sensitivitas deteksi.</p>
+          <h3 class="text-xl font-semibold">Sacace Real-Time PCR Calibration</h3>
+          <p class="text-gray-600 text-sm">Perform Real-Time PCR calibration to ensure temperature accuracy and detection sensitivity.</p>
         </div>
       </div>
 
       <!-- Tambahkan item lainnya dengan data-category sesuai -->
-    </div>
-
-    <!-- Pagination -->
-    <div class="mt-12 flex justify-center">
-      <nav class="inline-flex space-x-2">
-        <button id="prev-page" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">&lt; Sebelumnya</button>
-        <button id="page1" class="page-btn px-4 py-2 bg-blue-600 text-white rounded" data-page="1">1</button>
-        <button id="page2" class="page-btn px-4 py-2 bg-gray-200 rounded hover:bg-gray-300" data-page="2">2</button>
-        <button id="next-page" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Berikutnya &gt;</button>
-      </nav>
     </div>
   </div>
 </section>
@@ -282,8 +274,8 @@
     <div style="flex:1; min-width:220px;">
       <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">ABOUT KALINSLAB</h5>
       <p style="margin:8px 0; line-height:1.6;">
-        Kami adalah penyedia jasa servis untuk peralatan laboratorium penelitian, 
-        yang berkomitmen untuk memenuhi kebutuhan uji fungsi, perawatan, verifikasi, kalibrasi, dan perbaikan alat.
+        We are a service provider for research laboratory equipment,
+        committed to meeting your needs for functional testing, maintenance, verification, calibration, and repair.
       </p>
     </div>
 
@@ -300,7 +292,7 @@
 
     <!-- Statement -->
     <div style="flex:1; min-width:220px;">
-      <img src="img/sertifikat.jpeg" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
+      <img src="img/sertifikat.webp" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
     </div>
   </div>
 
@@ -311,16 +303,13 @@
     <div style="display:flex; gap:20px; justify-content:center; font-size:20px;">
       <a href="https://www.facebook.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-instagram"></i></a>
-     <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
+      <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.linkedin.com/in/paris-wanda-maulana-63521816b/recent-activity/all/" style="color:#fff; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>
 </footer>
 <script>
-  const content = document.getElementById("page-content");
+    const content = document.getElementById("page-content");
 
   // Saat halaman dimuat -> animasi masuk
   window.addEventListener("load", () => {

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>THERMO SCIENTIFIC CIMAREC Hotplate Stirrer — KALINSLAB</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     /* Transisi gambar utama */
@@ -40,16 +41,21 @@
 <!-- Navbar -->
 <nav class="bg-white shadow-md sticky top-0 z-50 py-3 px-4">
   <div class="container mx-auto flex items-center justify-between">
+    <!-- Logo -->
     <a href="beranda.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
+
+    <!-- Desktop Menu -->
     <div class="hidden md:flex items-center space-x-6 font-medium">
       <a href="index.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Home</a>
       <a href="tentang.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">About</a>
       <a href="service.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Service</a>
       <a href="kontak.html" class="text-gray-700 hover:text-blue-600 border-b-2 border-transparent hover:border-blue-600">Contact</a>
     </div>
+
+    <!-- Mobile Button -->
     <div class="md:hidden">
       <button id="menu-btn" class="focus:outline-none text-gray-700">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none"
@@ -59,11 +65,21 @@
       </button>
     </div>
   </div>
+
+  <!-- Mobile Menu dengan ICON -->
   <div id="mobile-menu" class="hidden md:hidden bg-gray-100 shadow-md">
-    <a href="index.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Home</a>
-    <a href="tentang.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">About</a>
-    <a href="service.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Service</a>
-    <a href="kontak.html" class="block px-6 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600">Contact</a>
+    <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-home mr-2"></i> Home
+    </a>
+    <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-users mr-2"></i> About
+    </a>
+    <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-tools mr-2"></i> Service
+    </a>
+    <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
+      <i class="fas fa-envelope mr-2"></i> Contact
+    </a>
   </div>
 </nav>
 
@@ -74,22 +90,22 @@
 
       <!-- Gambar Produk -->
       <div class="md:w-1/2 flex flex-col items-center">
-        <img id="mainImage" src="img/alat/produk5.jpg" alt="THERMO SCIENTIFIC CIMAREC Hotplate Stirrer"
+        <img id="mainImage" src="img/alat/produk5.webp" alt="THERMO SCIENTIFIC CIMAREC Hotplate Stirrer"
              class="w-full h-96 object-contain rounded-xl shadow-lg mb-5 bg-gray-50 p-4">
 
         <!-- Thumbnail Gallery -->
         <div class="flex gap-4">
-          <img src="img/alat/produk5.jpg" alt="thumb1"
+          <img src="img/alat/produk5.webp" alt="thumb1"
                class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk5.jpg', this)">
+               onmouseover="changeImage('img/alat/produk5.webp', this)">
           
-          <img src="img/alat/produk5-1.jpg" alt="thumb2"
+          <img src="img/alat/produk5-1.webp" alt="thumb2"
                class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk5-1.jpg', this)">
+               onmouseover="changeImage('img/alat/produk5-1.webp', this)">
           
-          <img src="img/alat/produk5-2.jpg" alt="thumb3"
+          <img src="img/alat/produk5-2.webp" alt="thumb3"
                class="w-20 h-20 object-cover rounded-lg cursor-pointer border-2 border-gray-300 hover:border-blue-600 hover:scale-105 transition"
-               onmouseover="changeImage('img/alat/produk5-2.jpg', this)">
+               onmouseover="changeImage('img/alat/produk5-2.webp', this)">
         </div>
       </div>
 
@@ -135,7 +151,7 @@
       mainImage.style.opacity = "1";
     }, 200);
 
-    const thumbs = element.parentNode.querySelectorAll("img");
+    const thumbs = element.parentNode.querySelectorAll("webp");
     thumbs.forEach(img => img.classList.remove("border-blue-600"));
     element.classList.add("border-blue-600");
   }

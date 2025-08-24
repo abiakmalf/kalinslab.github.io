@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - KALINSLAB</title>
-  <link rel="icon" type="image/png" href="img/lg3.png">
+  <link rel="icon" type="image/png" href="img/lg3.webp">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Hover smooth untuk kartu */
     .hover-card:hover {
@@ -22,19 +23,20 @@
     }
     #page-content {
     opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
+    transform: translateY(30px); /* turun sedikit */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    will-change: opacity, transform;
+    }
 
-  #page-content.slide-in {
-    opacity: 1;
-    transform: translateX(0);
-  }
+    #page-content.slide-in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  #page-content.slide-out {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
+    #page-content.slide-out {
+      opacity: 0;
+      transform: translateY(-30px); /* keluar ke atas */
+    }
   </style>
 </head>
 <body class="bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 font-sans min-h-screen flex flex-col">
@@ -44,7 +46,7 @@
   <div class="container mx-auto flex items-center justify-between">
     <!-- Logo -->
     <a href="index.html" class="flex items-center space-x-2 no-underline">
-      <img src="img/lg.png" alt="Logo KALINSLAB" class="h-9 w-9">
+      <img src="img/lg.webp" alt="Logo KALINSLAB" class="h-9 w-9">
       <span class="text-lg font-bold text-black">KALINSLAB</span>
     </a>
 
@@ -81,16 +83,16 @@
   <div id="mobile-menu" 
        class="max-h-0 overflow-hidden opacity-0 transform scale-y-95 transition-all duration-300 ease-in-out flex-col bg-gray-50 shadow-md md:hidden">
     <a href="index.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-home mr-2"></i> Beranda
+      <i class="fas fa-home mr-2"></i> Home
     </a>
     <a href="tentang.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-users mr-2"></i> Tentang Kami
+      <i class="fas fa-users mr-2"></i> About
     </a>
     <a href="service.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
       <i class="fas fa-tools mr-2"></i> Service
     </a>
     <a href="kontak.html" class="flex items-center px-6 py-3 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition">
-      <i class="fas fa-envelope mr-2"></i> Kontak
+      <i class="fas fa-envelope mr-2"></i> Contact
     </a>
   </div>
 </nav>
@@ -122,7 +124,7 @@
 <main id="page-content">
  <!-- Hero Section -->
 <section class="relative mt-2">
-  <img src="img/bg.png" alt="Tentang Kami" 
+  <img src="img/bg.webp" alt="Tentang Kami" 
        class="w-full h-60 sm:h-72 md:h-80 lg:h-96 xl:h-[450px] object-cover rounded-b-2xl shadow-md">
 
 </section>
@@ -133,15 +135,15 @@
     <div class="container mx-auto px-6 space-y-12">
       <!-- Sejarah & Profil -->
       <div class="grid md:grid-cols-2 gap-10 items-center">
-        <img src="img/about/about.jpeg" alt="Fasilitas KALINSLAB" class="rounded-2xl shadow-lg object-cover w-full h-80 md:h-[400px]">
+        <img src="img/about/about.webp" alt="Fasilitas KALINSLAB" class="rounded-2xl shadow-lg object-cover w-full h-80 md:h-[400px]">
         <div>
-          <h2 class="text-3xl font-bold text-gray-800 mb-4">Profil Perusahaan</h2>
+          <h2 class="text-3xl font-bold text-gray-800 mb-4">Company profile</h2>
           <p class="text-gray-700 leading-relaxed mb-4">
-            CV. KALINSLAB merupakan perusahaan yang bergerak di bidang jasa kalibrasi alat laboratorium. Kami berdedikasi untuk memberikan layanan terbaik dalam memastikan keakuratan setiap alat ukur dan instrumentasi laboratorium Anda.
+            CV. KALINSLAB is a company specializing in laboratory equipment calibration services. We are dedicated to providing the best possible service to ensure the accuracy of all your measuring instruments and laboratory instrumentation.
           </p>
           <p class="text-gray-700 leading-relaxed">
-            Dengan dukungan tenaga profesional dan peralatan kalibrasi bersertifikasi, kami siap membantu mitra industri, pendidikan, maupun laboratorium kesehatan menjaga kualitas hasil pengukuran mereka.
-            Komitmen kami adalah menjadikan CV. KALINSLAB sebagai partner kalibrasi terpercaya yang mendukung kemajuan dunia laboratorium di Indonesia.
+            With the support of professional staff and certified calibration equipment, we are ready to help partners in industry, education, and healthcare laboratories maintain the quality of their measurement results.
+            Our commitment is to make CV. KALINSLAB a trusted calibration partner supporting the advancement of the laboratory industry in Indonesia.
           </p>
         </div>
       </div>
@@ -150,51 +152,51 @@
       <div class="grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
         <div class="p-6 bg-white rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
           <h3 class="text-3xl font-bold text-blue-600">2019</h3>
-          <p class="text-gray-700 mt-2">Tahun Berdiri</p>
+          <p class="text-gray-700 mt-2">Year Founded</p>
         </div>
         <div class="p-6 bg-white rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
           <h3 class="text-3xl font-bold text-blue-600">5</h3>
-          <p class="text-gray-700 mt-2">Karyawan Profesional</p>
+          <p class="text-gray-700 mt-2">Professional Employees</p>
         </div>
         <div class="p-6 bg-white rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
           <h3 class="text-3xl font-bold text-blue-600">3</h3>
-          <p class="text-gray-700 mt-2">Workshop & Pabrik</p>
+          <p class="text-gray-700 mt-2">Workshop</p>
         </div>
         <div class="p-6 bg-white rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl">
           <h3 class="text-3xl font-bold text-blue-600">3+</h3>
-          <p class="text-gray-700 mt-2">Negara Distribusi</p>
+          <p class="text-gray-700 mt-2">Country of Distribution</p>
         </div>
       </div>
 
       <!-- Misi & Visi -->
       <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-10 rounded-2xl shadow-lg text-center">
-        <h3 class="text-2xl font-semibold">Visi Kami</h3>
-        <p class="mt-3 text-lg italic">“Memberikan pelayanan terbaik untuk menjaga perfoma alat laboratorium dalam menunjang penelitian dengan hasil akurat dan presisi.</p>
+        <h3 class="text-2xl font-semibold">Our Vision</h3>
+        <p class="mt-3 text-lg italic">“Providing the best service to maintain the performance of laboratory equipment in supporting research with accurate and precise results.</p>
       </div>
 
       <!-- Keunggulan Kompetitif -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="bg-white p-8 rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl text-center">
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Jaringan Global</h4>
-          <p class="text-gray-600">Didistribusikan ke lebih dari 3 negara.</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Global Network</h4>
+          <p class="text-gray-600">Distributed to more than 3 countries.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl text-center">
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Sertifikasi Internasional</h4>
-          <p class="text-gray-600">ISO, CE, FDA, NSF49, dan sertifikasi lainnya.</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">International Certification</h4>
+          <p class="text-gray-600">ISO, CE, FDA, NSF49, and other certifications.</p>
         </div>
         <div class="bg-white p-8 rounded-2xl shadow transform transition hover:-translate-y-2 hover:scale-105 hover:shadow-xl text-center">
-          <h4 class="text-xl font-semibold text-gray-800 mb-2">Workshop Modern</h4>
-          <p class="text-gray-600">Fasilitas kami berteknologi tinggi dan tersebar di beberapa lokasi strategis.</p>
+          <h4 class="text-xl font-semibold text-gray-800 mb-2">Modern Workshop</h4>
+          <p class="text-gray-600">Our facilities are high-tech and spread across several strategic locations.</p>
         </div>
       </div>
 
       <!-- Galeri Fasilitas -->
       <div>
-        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Galeri</h3>
+        <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Gallery</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <img src="img/about/about2.jpeg" alt="Workshop Kalibrasi" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
-          <img src="img/about/about3.jpeg" alt="Workshop Produksi" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
-          <img src="img/about/about4.jpeg" alt="Tim KALINSLAB" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
+          <img src="img/about/about2.webp" alt="Workshop Kalibrasi" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
+          <img src="img/about/about3.webp" alt="Workshop Produksi" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
+          <img src="img/about/about4.webp" alt="Tim KALINSLAB" class="w-full h-52 object-cover rounded-xl shadow transform transition hover:scale-105 hover:shadow-lg">
         </div>
       </div>
     </div>
@@ -216,8 +218,8 @@
     <div style="flex:1; min-width:220px;">
       <h5 style="margin-bottom:15px; font-size:18px; font-weight:bold;">ABOUT KALINSLAB</h5>
       <p style="margin:8px 0; line-height:1.6;">
-        Kami adalah penyedia jasa servis untuk peralatan laboratorium penelitian, 
-        yang berkomitmen untuk memenuhi kebutuhan uji fungsi, perawatan, verifikasi, kalibrasi, dan perbaikan alat.
+        We are a service provider for research laboratory equipment,
+        committed to meeting your needs for functional testing, maintenance, verification, calibration, and repair.
       </p>
     </div>
 
@@ -234,7 +236,7 @@
 
     <!-- Statement -->
     <div style="flex:1; min-width:220px;">
-      <img src="img/sertifikat.jpeg" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
+      <img src="img/sertifikat.webp" alt="Statement kalinslab" style="max-width:100%; border-radius:8px;">
     </div>
   </div>
 
@@ -245,10 +247,7 @@
     <div style="display:flex; gap:20px; justify-content:center; font-size:20px;">
       <a href="https://www.facebook.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-facebook-f"></i></a>
       <a href="https://www.instagram.com/" style="color:#fff; text-decoration:none;"><i class="fab fa-instagram"></i></a>
-     <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
+      <a href="https://wa.me/6285777817631" target="_blank" style="color:#fff; text-decoration:none;"><i class="fab fa-whatsapp"></i></a>
       <a href="https://www.linkedin.com/in/paris-wanda-maulana-63521816b/recent-activity/all/" style="color:#fff; text-decoration:none;"><i class="fab fa-linkedin-in"></i></a>
     </div>
   </div>
